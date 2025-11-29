@@ -14,7 +14,7 @@ df = df.sort_values(by=['date'], ascending=True)
 colors ={"background": "#111111", "text": "#7FDBFF"}
 
 app.layout = html.Div([
-    html.Div([html.H1("Pink Morsels Sales Data"),html.H4("Sales data Per Region (2018-2022)"),dcc.RadioItems(id="radio",
+    html.Div([html.H1("Pink Morsels Sales Data", id ="header-one"),html.H4("Sales data Per Region (2018-2022)"),dcc.RadioItems(id="radio",
                                                                           options=[{"label":"North", "value":"north"},
                                                                                    {"label":"South", "value":"south"},
                                                                                    {"label":"East", "value":"east"},
@@ -33,4 +33,5 @@ def update_graph(value):
         font_color=colors["text"]
     )
     return fig
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
